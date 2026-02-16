@@ -1,7 +1,6 @@
 # 📄 Visual Implicit Geometry Transformer for Autonomous Driving
 
-Official implementation of the paper:  
-**"Visual Implicit Geometry Transformer for Autonomous Driving"**  
+Official implementation of the paper: **"Visual Implicit Geometry Transformer for Autonomous Driving"**  
 
 ---
 
