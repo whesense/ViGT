@@ -12,13 +12,11 @@ Official implementation of the paper: **"Visual Implicit Geometry Transformer fo
 
 ---
 
-## Stay tuned! Code coming soon.
-
 --
 
 ## Citation
 
-If you found our work usefull, please, cite it via following bibtex.
+If you found our work useful, please cite it with the following bibtex.
 
 ```
 @article{vigt2026,
