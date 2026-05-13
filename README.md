@@ -1,6 +1,8 @@
 # 📄 Visual Implicit Geometry Transformer for Autonomous Driving
 
-Official implementation of the paper: **"Visual Implicit Geometry Transformer for Autonomous Driving"**  
+> ## 🎉 Accepted at **IJCAI 2026**
+
+Official implementation of the paper: **"Visual Implicit Geometry Transformer for Autonomous Driving"**
 
 ---
 
@@ -8,7 +10,7 @@ Official implementation of the paper: **"Visual Implicit Geometry Transformer fo
 
 - 📄 **Paper:** [![arXiv](https://img.shields.io/badge/arXiv-2602.05573-b31b1b?logo=arxiv)](https://www.arxiv.org/abs/2602.05573)
 - 🤗 **Hugging Face Model:** Coming soon!
-- 🌐 **Project Page (optional):** Coming soon!  
+- 🌐 **Project Page:** [whesense.github.io](https://whesense.github.io)  
 
 ---
 
