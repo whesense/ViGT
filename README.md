@@ -34,16 +34,13 @@ python -m pip install --no-build-isolation --no-binary=nerfacc nerfacc
 ### 3) Download nuScenes mini and unpack it to any local folder, for example `./data/`.
 
 ### 4) Download model checkpoint
-1. Download the [ViGT checkpoint file](PASTE_CHECKPOINT_LINK_HERE).
-
 Checkpoint summary:
 
 | Checkpoint | Train datasets | Chamfer Dist (nuScenes) | Chamfer Dist (nuPlan) | Chamfer Dist (Waymo) | Chamfer Dist (AV2) | mIoU (Occ3D nuScenes) |
 |---|---|---:|---:|---:|---:|---:|
 | [ViGT checkpoint file](PASTE_CHECKPOINT_LINK_HERE) | nuScenes, nuPlan, Waymo, Av2 | 1.8727 | 3.286 | 2.3846 | 3.008 | 0.5591 |
 
-### 5) Run Jupyter demo
-Open `examples/nuscenes_demo.ipynb`.
+### 5) Open `examples/nuscenes_demo.ipynb`.
 ---
 
 ## Citation
