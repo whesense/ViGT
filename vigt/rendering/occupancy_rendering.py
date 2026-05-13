@@ -2,13 +2,14 @@ from typing import Callable
 
 import nerfacc
 import torch
+import torch.nn as nn
 from torch.nn import functional as F
 
-from utils.camera import Camera
-from utils.colormap import Colormap
+from .camera import Camera
+from .colormap import Colormap
 
 
-class ImplicitOccupancyRenderer:
+class ImplicitOccupancyRenderer(nn.Module):
     def __init__(
         self,
         viewport: tuple[int, int] | None = None,
@@ -18,8 +19,8 @@ class ImplicitOccupancyRenderer:
         background: tuple[int, int, int] = (0, 0, 0),
         render_step_size: float = 0.05,
         render_chunk: int = 8192,
-        roi_vmin: tuple[float, float, float] = (-100.0, -100.0, -4.5),
-        roi_vmax: tuple[float, float, float] = (100.0, 100.0, 4.5),
+        roi_vmin: tuple[float, float, float] = (-40.0, -40.0, -4.5),
+        roi_vmax: tuple[float, float, float] = (40.0, 40.0, 4.5),
     ) -> None:
         super().__init__()
         self.viewport = viewport

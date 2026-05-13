@@ -3,7 +3,7 @@ from typing import Callable, Optional
 import nerfacc
 import torch
 
-from occupancy_rendering import ImplicitOccupancyRenderer
+from .occupancy_rendering import ImplicitOccupancyRenderer
 
 def _rayalpha_fn(
     occupancy_fn: Callable[..., torch.Tensor],
@@ -24,12 +24,23 @@ def _rayalpha_fn(
 
 @torch.no_grad()
 def render_points(
-    renderer: ImplicitOccupancyRenderer,
     occupancy_fn,
     ray_origins: torch.Tensor,
     ray_dirs: torch.Tensor,
+    roi: dict,
     max_rays_chunk: Optional[int] = None,
 ) -> torch.Tensor:
+    roi_min = roi["min"]
+    roi_max = roi["max"]
+    renderer = ImplicitOccupancyRenderer(
+        render_step_size=0.05,
+        render_chunk=8192,
+        roi_vmin=(roi_min[0], roi_min[1], roi_min[2]),
+        roi_vmax=(roi_max[0], roi_max[1], roi_max[2]),
+        zmin=roi_min[2],
+        zmax=roi_max[2],
+    ).to(ray_origins.device)
+
     assert ray_origins.device.type == "cuda", f"ray_origins on {ray_origins.device}, expected cuda"
     assert ray_dirs.device.type == "cuda", f"ray_dirs on {ray_dirs.device}, expected cuda"
 

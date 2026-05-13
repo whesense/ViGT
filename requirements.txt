@@ -1,0 +1,13 @@
+nerfacc
+transformers==4.53.2
+pypcd4
+matplotlib
+plotly
+torch==2.5.1
+torchvision
+ipykernel
+pyquaternion
+nuscenes-devkit
+git+https://github.com/microsoft/MoGe.git
+xformers==0.0.28.post3
+nbformat>=4.2.0

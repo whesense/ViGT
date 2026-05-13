@@ -47,8 +47,17 @@ class ViGT(nn.Module):
         def occupancy_fn(queries: torch.Tensor):
             results = []
             for i in range(0, len(queries), chunk):
-                logits = self.decode(context, queries[i : i + chunk].view(1, -1, queries.shape[-1]))
-                results.append(logits.sigmoid().squeeze())
+                chunk_queries = queries[i : i + chunk]
+                logits = self.decode(context, chunk_queries.view(1, -1, queries.shape[-1]))
+                densities = logits.sigmoid().view(-1)
+
+                # Remove points inside ego box (ego coordinates).
+                x = chunk_queries[:, 0]
+                y = chunk_queries[:, 1]
+                in_box = (x > -1.0) & (x < 3.5) & (torch.abs(y) < 1.0)
+                densities[in_box] = 0.0
+
+                results.append(densities)
             return torch.cat(results, dim=0)
 
         return occupancy_fn

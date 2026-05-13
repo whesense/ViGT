@@ -59,7 +59,7 @@ def lookat(
     up_t = torch.as_tensor(up, dtype=torch.float32)
 
     z = F.normalize(at_t - eye_t, dim=-1, eps=1e-5)
-    if torch.abs(torch.dot(z, up_t) - 1.0) < 1e-3:
+    if torch.abs(torch.abs(torch.dot(z, up_t)) - 1.0) < 1e-3:
         raise RuntimeError("Direction and up vectors cannot be collinear.")
 
     x = F.normalize(torch.cross(up_t, z, dim=-1), dim=-1, eps=1e-5)
@@ -101,7 +101,8 @@ class PinholeCamera:
         if from_pixels:
             height, width = self.viewport
             scale = torch.tensor([width, height], device=uv.device, dtype=uv.dtype)
-            uv = uv / scale
+            # Convert integer pixel coordinates to normalized coordinates by pixel centers.
+            uv = (uv + 0.5) / scale
 
         uv = uv * depth
         points = torch.cat([uv, depth], dim=-1)

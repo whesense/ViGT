@@ -10,12 +10,12 @@ import torch.nn as nn
 from safetensors.torch import load_file as safetensors_load_file
 from safetensors.torch import save_file as safetensors_save_file
 
-from modules.dpt import DPTWrapper
-from modules.encoder import ViGTEncoder
-from modules.implicit_decoder import ImplicitDecoder
-from modules.layers.encoder_layers import MultiLayerBevProjector
-from modules.layers.moge import MoGeBackbone
-from vigt import ViGT
+from .modules.dpt import DPTWrapper
+from .modules.encoder import ViGTEncoder
+from .modules.implicit_decoder import ImplicitDecoder
+from .modules.layers.encoder_layers import MultiLayerBevProjector
+from .modules.layers.moge import MoGeBackbone
+from .vigt import ViGT
 
 
 @dataclass
