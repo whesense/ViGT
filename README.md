@@ -38,7 +38,7 @@ Checkpoint summary:
 
 | Checkpoint | Train datasets | Chamfer Dist (nuScenes) | Chamfer Dist (nuPlan) | Chamfer Dist (Waymo) | Chamfer Dist (AV2) | mIoU (Occ3D nuScenes) |
 |---|---|---:|---:|---:|---:|---:|
-| [ViGT checkpoint file](PASTE_CHECKPOINT_LINK_HERE) | nuScenes, nuPlan, Waymo, Av2 | 1.8727 | 3.286 | 2.3846 | 3.008 | 0.5591 |
+| [ViGT checkpoint file](https://huggingface.co/whesense/ViGT/resolve/main/model.safetensors) | nuScenes, nuPlan, Waymo, Av2 | 1.8727 | 3.286 | 2.3846 | 3.008 | 0.5591 |
 
 ### 5) Open `examples/nuscenes_demo.ipynb`.
 ---
