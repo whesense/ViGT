@@ -9,7 +9,7 @@ Official implementation of the paper: **"Visual Implicit Geometry Transformer fo
 ## 🔗 Links
 
 - 📄 **Paper:** [![arXiv](https://img.shields.io/badge/arXiv-2602.05573-b31b1b?logo=arxiv)](https://www.arxiv.org/abs/2602.05573)
-- 🤗 **Hugging Face Model:** Coming soon!
+- 🤗 **Hugging Face Model:** [page](https://huggingface.co/whesense/ViGT)
 - 🌐 **Project Page:** [whesense.github.io](https://whesense.github.io)  
 
 ---
